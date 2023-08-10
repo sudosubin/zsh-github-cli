@@ -1,4 +1,6 @@
 #!/usr/bin/zsh
 
-# Add zsh function.
-fpath+="${0:h}/src"
+if (( $+commands[gh] )); then
+  eval "$(gh completion --shell zsh)"
+  compdef _gh gh
+fi
